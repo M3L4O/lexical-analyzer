@@ -1,8 +1,11 @@
-#top{
-  layout: horizontal;
-  height: 30%;
+#body{
+  layout: vertical;
 }
 
+#search_bar{
+  layout: horizontal;
+  height: auto;
+}
 #query{
   width:95%;
   border: solid #a6e3a1;

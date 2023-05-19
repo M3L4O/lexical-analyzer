@@ -10,19 +10,20 @@ class MainApp(App):
 
     def compose(self):
         yield Header(True)
-        with Horizontal(id="top"):
-            yield Input(
-                id="query",
-                placeholder="Procure por uma palavra ou frase no Twitter.",
-                classes="box",
-            )
-            yield Button(
-                id="search_button",
-                label="\U0001f50e",
-            )
+        with Vertical(id="body"):
+            with Horizontal(id="search_bar"):
+                yield Input(
+                    id="query",
+                    placeholder="Procure por uma palavra ou frase no Twitter.",
+                    classes="box",
+                )
+                yield Button(
+                    id="search_button",
+                    label="\U0001f50e",
+                )
 
-        with VerticalScroll():
-            yield Markdown(id="results")
+            with VerticalScroll():
+                yield Markdown(id="results")
 
     def on_button_pressed(self, event: Button.Pressed):
         self._load_tweets()
@@ -34,9 +35,10 @@ class MainApp(App):
         query: str = self.query_one("#query", Input).value
         if query:
             results = self.search_engine.search(query)
-            self.query_one("#results", Markdown).update(
-                "\n---\n".join(tweet.text for tweet in results)
-            )
+            if results is not None:
+                self.query_one("#results", Markdown).update(
+                    "\n---\n".join(tweet.text for tweet in results)
+                )
 
 
 if __name__ == "__main__":
