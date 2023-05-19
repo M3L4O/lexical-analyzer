@@ -22,7 +22,7 @@ class MainApp(App):
                     label="\U0001f50e",
                 )
 
-            with VerticalScroll():
+            with VerticalScroll(id="main"):
                 yield Markdown(id="results")
 
     def on_button_pressed(self, event: Button.Pressed):

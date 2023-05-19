@@ -12,6 +12,10 @@
 }
 #search_button{
   text-align: left;
-  padding: 0;
-  margin: 0;
+}
+
+#main{
+  scrollbar-color: #a6e3a1;
+  scrollbar-color-active: #a6e3a1;
+  scrollbar-color-hover: #a6e3a1;
 }
