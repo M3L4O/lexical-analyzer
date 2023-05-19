@@ -1,0 +1,14 @@
+#top{
+  layout: horizontal;
+  height: 30%;
+}
+
+#query{
+  width:95%;
+  border: solid #a6e3a1;
+}
+#search_button{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
